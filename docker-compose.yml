@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      INSPECTION_FIXTURE_DIR: /app/data/fixtures
+      INSPECTION_DEMO_MODE: "true"
+    ports:
+      - "4800:4800"
+    volumes:
+      - ./data/fixtures:/app/data/fixtures:ro
+      - inspection-runtime:/app/runtime
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "5188:5188"
+    depends_on:
+      - api
+
+volumes:
+  inspection-runtime:
