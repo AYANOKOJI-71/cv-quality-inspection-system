@@ -46,6 +46,3 @@ Open `http://127.0.0.1:5188`. Alternatively, use `docker compose up --build` on 
 | `GET /v1/dashboard` | Returns model description, fixture-only evaluation, and recent demo evidence. |
 | `POST /v1/inspect` | Uploads one JPEG, PNG, or BMP up to 12 MB and returns the overlay evidence. |
 
-## Quality statement
-
-This is a portfolio system and a decision-support prototype, not a safety-certified production release-control system. Its evaluation numbers are valid only for the prepared local fixture and must not be presented as performance guarantees. See [operations guidance](docs/OPERATIONS.md) for calibration, human-review, data-retention, and production-readiness controls.
